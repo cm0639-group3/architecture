@@ -7,7 +7,13 @@ sequenceDiagram
     opt is payment gateway enabled?
     FE->>-Alice: Display payment options
     end
-    Alice->>+FE: Choose option and confirm
+    Alice->>+FE: Choose option and add to cart
+    FE->>-Alice: Update cart status
+    opt 
+    Alice->>+FE: Add other flights to the cart
+    FE->>-Alice: Update cart status
+    end
+    Alice->>+FE: Select order (of flights) and confirm
     autonumber off
     alt flight option is valid 
     autonumber
