@@ -1,0 +1,38 @@
+sequenceDiagram
+    Title Sequence: Buying a ticket
+    autonumber
+    Alice->>+FE: Choose a flight
+    FE->>-Alice: Display luggage options
+    Alice->>+FE: Select luggage size
+    opt is payment gateway enabled?
+    FE->>-Alice: Display payment options
+    end
+    Alice->>+FE: Choose option and confirm
+    autonumber off
+    alt flight option is valid 
+    autonumber
+    FE->>+Flight Manager: POST /ticket
+    Flight Manager->>+Flight: is flight still valid
+    Flight->>Flight Manager: flight can be booked
+    %% over here an interaction with a payment gateway would
+    %% valid user payment details
+    par 
+    Flight Manager-->>-FE: ticket with receipt
+    and
+    Flight Manager-->>Notification: queue notification
+    end
+    else 
+    autonumber 6
+    FE->>+Flight Manager: POST /ticket
+    Flight Manager->>+Flight: is flight still valid
+    Flight->>Flight Manager: flight can no longer be booked
+    Flight Manager-->>-FE: error booking flight
+    end
+    autonumber off
+    FE-->>-Alice: Render ticket status
+    box BE
+    participant Flight Manager
+    participant Flight
+    participant Notification
+    end
+    

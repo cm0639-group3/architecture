@@ -1,0 +1,14 @@
+sequenceDiagram
+    Title Sequence: Simple flight search
+    autonumber
+    Alice->>+FE: Request homepage
+    FE->>+Flight Manager: GET /flight?source_airport&destination_airport
+    Flight Manager->>+Flight: Get all flights that match search params
+    Flight->>-Flight Manager: flight options (available time and luggage)
+    Flight Manager-->>-FE: flights with search params
+    FE-->>-Alice: Render flights
+    box BE
+    participant Flight Manager
+    participant Flight
+    end
+    
