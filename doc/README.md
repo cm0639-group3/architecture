@@ -13,3 +13,5 @@ Is important to note, as the name suggests, there are 4 levels of detail. Being 
 ### System Context Diagram
 
 Provides a high-level overview of the system and its external dependencies.
+
+![Context Diagram](https://github.com/cm0639-group3/architecture/blob/main/doc/context-diagram.png)
