@@ -15,3 +15,13 @@ Is important to note, as the name suggests, there are 4 levels of detail. Being 
 Provides a high-level overview of the system and its external dependencies.
 
 ![Context Diagram](https://github.com/cm0639-group3/architecture/blob/main/doc/context-diagram.png)
+
+### UML Diagrams (most detailed level)
+
+#### Searching for a flight
+
+![Sequence diagram search for a flight](https://github.com/cm0639-group3/architecture/blob/main/doc/uml/sequence.flight-search.png)
+
+#### Buying a ticket
+
+![Sequence diagram buy a ticket](https://github.com/cm0639-group3/architecture/blob/main/doc/uml/sequence.buying-ticket.png)
